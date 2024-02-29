@@ -58,13 +58,13 @@ header {
 	background-color: rgba(0, 0, 0, 0.866);
 }
 
-nav {
+.nav-usual {
 	width: 45%;
 	display: flex;
 	flex-direction: row;
 }
 
-ul {
+.nav-usual ul {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -111,6 +111,70 @@ form {
 .nav-el:hover {
 	cursor: pointer;
 	font-weight: 800;
+}
+
+.nav-menu {
+	display: none;
+	position: absolute;
+	top: 70px;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.866);
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	z-index: 5;
+	width: 18%;
+	min-width: 80px;
+	text-align: right;
+	padding: 10px 20px;
+}
+
+.nav-menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#toggle-nav {
+	display: none;
+}
+
+.hamburger {
+	display: none;
+	width: auto;
+	height: 45px;
+	cursor: pointer;
+}
+
+.hamburger img {
+	width: 45px;
+	height: auto;
+}
+@media only screen and (max-width: 769px) {
+	.hamburger {
+		display: contents;
+	}
+
+	.nav-usual {
+		display: none;
+	}
+
+	.nav-menu {
+		display: none;
+	}
+
+	.nav-menu ul {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	li:has(.nav-el) {
+		padding: 5px 0;
+	}
+
+	.toggle-nav:checked ~ .nav-menu {
+		display: flex;
+	}
 }
 
 /* GENERAL */
@@ -291,9 +355,6 @@ form {
 		width: calc(100% - 40px);
 		padding: 0 20px;
 		justify-content: space-between;
-	}
-	nav {
-		flex-grow: 1;
 	}
 
 	.animal-list {
