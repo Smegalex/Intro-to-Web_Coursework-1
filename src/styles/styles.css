@@ -93,7 +93,7 @@ form {
 	text-align: left;
 }
 
-#current-nav {
+.current-nav {
 	color: var(--text-accent-color);
 	font-weight: 700;
 	cursor: default;
@@ -273,7 +273,7 @@ form {
 	color: var(--europe-color);
 }
 
-#current-nav.EU-nav {
+.current-nav.EU-nav {
 	color: var(--europe-color);
 }
 
@@ -298,7 +298,7 @@ form {
 	color: var(--asia-color);
 }
 
-#current-nav.AS-nav {
+.current-nav.AS-nav {
 	color: var(--asia-color);
 }
 
@@ -318,7 +318,7 @@ form {
 	color: var(--africa-color);
 }
 
-#current-nav.AF-nav {
+.current-nav.AF-nav {
 	color: var(--africa-color);
 }
 
@@ -339,7 +339,7 @@ form {
 	color: var(--america-color);
 }
 
-#current-nav.AM-nav {
+.current-nav.AM-nav {
 	color: var(--america-color);
 }
 
@@ -358,7 +358,7 @@ form {
 	color: var(--oceania-color);
 }
 
-#current-nav.OC-nav {
+.current-nav.OC-nav {
 	color: var(--oceania-color);
 }
 
