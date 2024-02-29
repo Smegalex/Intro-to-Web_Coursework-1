@@ -1,6 +1,7 @@
 :root {
 	--light-text-color: rgb(255, 255, 255);
 	--text-accent-color: rgb(172, 237, 255);
+	--dark-text-accent-color: rgb(11, 95, 119);
 	--europe-color: #00a651;
 	--oceania-color: #0081c8;
 	--america-color: #ee334e;
@@ -149,12 +150,11 @@ form {
 	height: calc(100% - 70px);
 	width: 100%;
 	overflow-y: auto;
-	position: relative; /* Keep position relative for z-index */
-	z-index: 1; /* Ensure content is above background */
+	position: relative;
+	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* color: black; */
 	text-shadow: 0 0 4px rgb(0, 0, 0);
 	color: var(--light-text-color);
 }
@@ -216,6 +216,68 @@ form {
 	color: inherit;
 }
 
+.popup-toggle-label {
+	position: fixed;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	z-index: 5;
+	opacity: 25%;
+	transition: opacity 0.5s;
+}
+.popup-toggle-label:hover {
+	opacity: 100%;
+}
+
+.popup-toggle-label img {
+	width: 50px;
+	height: auto;
+}
+
+.popup-container {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+}
+
+.popup-toggle {
+	display: none;
+}
+.popup-close {
+	position: fixed;
+	bottom: 110px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+}
+
+.popup-close img {
+	width: 50px;
+	height: auto;
+}
+
+.popup-toggle:checked ~ #popup {
+	display: block;
+}
+
+.popup-content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: calc(100% - 40px);
+	padding: 20px;
+	background-color: #fff;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	text-align: center;
+}
+
 /* phone */
 
 @media only screen and (max-width: 768px) {
@@ -260,6 +322,14 @@ form {
 
 	.animal-caption_container {
 		justify-content: center;
+	}
+
+	.popup-close {
+		bottom: 130px;
+	}
+
+	.popup-toggle-label {
+		opacity: 100%;
 	}
 }
 
